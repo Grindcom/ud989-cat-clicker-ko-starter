@@ -1,4 +1,4 @@
-var ViewModel = function (){
+var Cat = function(){
   this.clickCount = ko.observable(0);
   this.name = ko.observable('Tabby');
   this.age = ko.observableArray([
@@ -20,11 +20,17 @@ var ViewModel = function (){
   this.nickname = ko.observableArray([
     {alias: "Fluffy"},
     {alias: "Tony"},
-    {alias: "Killer"}
+    {alias: "Killer"},
+    {alias: "Antoine"}
   ]);
   //
+}
+
+var ViewModel = function (){
+  this.currentCat = ko.observable(new Cat());
+
   this.incrementCounter = function(){
-    this.clickCount(this.clickCount() + 1);
+    this.currentCat().clickCount(this.currentCat().clickCount() + 1);
 
   };
 }
