@@ -6,6 +6,9 @@ var ViewModel = function (){
     {age: "teen"},
     {age: "adult"}
   ]);
+
+  this.imgSrc = ko.observable('img/434164568_fea0ad4013_z.jpg');
+  this.imgAttribution = ko.observable('https://www.flickr.com/photos/big');
   // Computed observable
   this.level = ko.computed(function(){
     if(this.clickCount() <= 10){
@@ -13,8 +16,12 @@ var ViewModel = function (){
     }
     return this.age()[1].age;
   }, this);
-  this.imgSrc = ko.observable('img/434164568_fea0ad4013_z.jpg');
-  this.imgAttribution = ko.observable('https://www.flickr.com/photos/big');
+  // Control flow example
+  this.nickname = ko.observableArray([
+    {alias: "Fluffy"},
+    {alias: "Tony"},
+    {alias: "Killer"}
+  ]);
   //
   this.incrementCounter = function(){
     this.clickCount(this.clickCount() + 1);
