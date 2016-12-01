@@ -5,23 +5,28 @@
     <title>Cat Clicker</title>
 </head>
 <body>
+    <!-- iterate through the catList observableArray and add a list item of the name for each cat in the array -->
     <ul id="cat-list" data-bind="foreach: catList">
-        <div id="cat" data-bind="with: $data">
-
-            <h2 id="cat-name" data-bind="text: name"></h2>
-            <div class="cat-age" data-bind="text: level"></div>
-            <div id="cat-count" data-bind="text: clickCount"></div>
-            <img id="cat-img" src="" alt="cute cat" data-bind="click: $root.incrementCounter, attr: {src: imgSrc}">
-            <div class="cat-nickname">
-                <h3>Nickname:</h3>
-                <ul data-bind="foreach: nickname">
-                    <li data-bind="text: alias"></li>
-                </ul>
-            </div>
-
-
-        </div>
+        <li data-bind="text: name, click: $parent.changeCat"></li>
     </ul>
+    <!-- The 'with' means that all data bindings within the div relate to the currentCat context -->
+    <div id="cat" data-bind="with: currentCat">
+        <!-- Show the entire cat description for the current cat in the array -->
+        <h2 id="cat-name" data-bind="text: name"></h2>
+        <div class="cat-age" data-bind="text: level"></div>
+        <div id="cat-count" data-bind="text: clickCount"></div>
+        <img id="cat-img" src="" alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
+        <div class="cat-nickname">
+            <h3>Nickname:</h3>
+            <!-- Iterate through all nicknames and make a new list item -->
+            <ul data-bind="foreach: nickname">
+                <li data-bind="text: alias"></li>
+            </ul>
+        </div>
+
+
+    </div>
+
     <script src="js/lib/knockout-3.2.0.js"></script>
     <script src="js/app.js"></script>
 </body>

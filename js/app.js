@@ -50,7 +50,7 @@ var Cat = function(data){
     {age: "Adult"},
     {age: "Ninja"}
   ]);
-
+//
   this.imgSrc = ko.observable(data.imgSrc);
   this.imgAttribution = ko.observable(data.imgAttribution);
   // Computed observable
@@ -84,12 +84,18 @@ var ViewModel = function (){
   initialCats.forEach(function(cat){
     self.catList.push(new Cat(cat));
   });
-  //Set the current cat to first in the array
+  // initialized to the current cat to first in the array
+  //  changed when the user clicks a cat name
   this.currentCat = ko.observable(this.catList()[0]);
-  //
+  // called when a cat picture is clicked
   this.incrementCounter = function(){
     this.clickCount(this.clickCount() + 1);
-
+  };
+  // Called when a cat name is clicked
+  this.changeCat = function(obj){
+    // the clicked item is passed with a click event
+    // that means it is the selected cat
+    self.currentCat(obj);
   };
 }
 
