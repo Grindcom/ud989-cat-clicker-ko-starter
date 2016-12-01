@@ -10,7 +10,7 @@ Demonstrate the Model--ViewModel--View interaction of KnockoutJS.
 
 ## How it works
 ### View
-The file 'index.html' is where the Cat information is displayed using KnockoutJS data-binding elements.  The values are related within the different elements.
+The file 'index.html' is where the Cat information is displayed using KnockoutJS data-binding elements.  The values are related within the different elements.  This app leverages the Knockout capability to iterate through an observableArray and replicate html elements within; this is shown for the cat name list and the nickname list.
 
 ### Model
 The file 'app.js' holds the
