@@ -86,7 +86,7 @@ var ViewModel = function (){
   });
   //Set the current cat to first in the array
   this.currentCat = ko.observable(this.catList()[0]);
-
+  //
   this.incrementCounter = function(){
     this.clickCount(this.clickCount() + 1);
 
