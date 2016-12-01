@@ -1,6 +1,7 @@
 # Cat Clicker app
 ## Objective
 Demonstrate the Model--ViewModel--View interaction of KnockoutJS.  
+The file structure and index.html was provided by a Udacity course and I built on that to create the application Functionality.
 
 ## Basic Functionality
 1. The page shows a list of cat names followed by a detailed description of one of them.  
